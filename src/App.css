@@ -11,7 +11,7 @@ body {
 
 .app {
   min-height: 100vh;
-  background-color: #f1f4f8;
+  background-color: #f1f5fa;
 }
 
 .header {
@@ -36,6 +36,7 @@ body {
   gap: 25px;
   padding: 15px;
   background-color: white;
+  box-shadow: 0 2px 5px #00000010;
 }
 
 .navbar a {
@@ -45,7 +46,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #69aef5;
+  color: #318cf5;
 }
 
 .main {
@@ -55,13 +56,14 @@ body {
 .page-title {
   margin: 0 0 25px;
   text-align: center;
-  color: #24476b;
+  color: #315b86;
+  font-size: 32px;
 }
 
 .form-section,
 .filter-section {
-  max-width: 800px;
-  margin: 0 auto 25px;
+  max-width: 1100px;
+  margin: 0 auto 20px;
   padding: 20px;
   background-color: white;
   border-radius: 10px;
@@ -83,14 +85,15 @@ body {
 .student-form select,
 .filter-section select {
   min-width: 0;
-  padding: 10px;
-  border: 1px solid #cbd5e1;
+  padding: 11px;
+  border: 1px solid #d2dce8;
   border-radius: 6px;
   font-size: 14px;
+  background-color: white;
 }
 
 .student-form input {
-  flex: 1 1 200px;
+  flex: 1 1 180px;
 }
 
 .student-form select {
@@ -105,35 +108,64 @@ body {
 }
 
 .students-container {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .student-card {
   width: 100%;
-  max-width: 330px;
+  min-width: 0;
   padding: 22px;
   text-align: center;
   background-color: white;
   border-radius: 10px;
-  box-shadow: 0 3px 12px #00000015;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.student-image,
+.student-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px !important;
+  height: 70px !important;
+  min-width: 70px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
 }
 
 .student-image {
-  display: block;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 12px;
-  border-radius: 50%;
   object-fit: cover;
 }
 
+.student-avatar {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #a99af5, #8e82e8);
+}
+
+/* Couleurs différentes selon la première lettre */
+.student-card:nth-child(3n + 1) .student-avatar {
+  background: linear-gradient(135deg, #a99af5, #8e82e8);
+}
+
+.student-card:nth-child(3n + 2) .student-avatar {
+  background: linear-gradient(135deg, #61b4e8, #438fd0);
+}
+
+.student-card:nth-child(3n) .student-avatar {
+  background: linear-gradient(135deg, #fa83b4, #ed4e91);
+}
+
 .student-card h2 {
+  margin: 12px 0;
   color: #24476b;
-  font-size: 21px;
+  font-size: 20px;
   overflow-wrap: anywhere;
 }
 
@@ -157,7 +189,7 @@ body {
   padding: 10px 14px;
   border: none;
   border-radius: 6px;
-  background-color: #69aef5;
+  background-color: #438ff0;
   color: white;
   font-size: 14px;
   text-decoration: none;
@@ -170,11 +202,11 @@ body {
 }
 
 .edit-button {
-  background-color: #e5a23c;
+  background-color: #f0a12f;
 }
 
 .delete-button {
-  background-color: #d9534f;
+  background-color: #e64c50;
 }
 
 .footer {
@@ -200,11 +232,8 @@ body {
   }
 
   .students-container {
+    grid-template-columns: 1fr;
     gap: 18px;
-  }
-
-  .student-card {
-    max-width: 100%;
   }
 
   .student-form input,

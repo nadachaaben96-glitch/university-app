@@ -10,11 +10,17 @@ function StudentCard(props) {
 
   return (
     <div className="student-card">
-      <img
-        src={props.photo}
-        alt="Photo étudiant"
-        className="student-image"
-      />
+      {props.nom === "Nada Chaaben" ? (
+        <img
+          src={props.photo}
+          alt={props.nom}
+          className="student-image"
+        />
+      ) : (
+        <div className="student-avatar">
+          {props.nom.charAt(0).toUpperCase()}
+        </div>
+      )}
 
       <h2>{props.nom}</h2>
 
